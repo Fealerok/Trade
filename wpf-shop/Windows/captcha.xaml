@@ -1,0 +1,35 @@
+﻿<Window x:Class="wpf_shop.Windows.captcha"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_shop.Windows"
+        mc:Ignorable="d"
+        Title="captcha" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        Icon="/images/icon.ico">
+
+    <Window.Resources>
+        <!-- Определение цветовой схемы с использованием SolidColorBrush -->
+        <SolidColorBrush x:Key="MainColor" Color="#FF718C51"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#FF498C51"/>
+        <SolidColorBrush x:Key="BackgroundColor" Color="#FFFFFFFF"/>
+
+        <!-- Шрифт -->
+        <FontFamily x:Key="MainFont">Comic Sans MS</FontFamily>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource BackgroundColor}">
+        <!-- Логотип и название -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10">
+            <Image Source="/images/logo.png" Width="50" Height="50" Margin="0,0,10,0"/>
+            <TextBlock Text="UvelirKa" FontFamily="{StaticResource MainFont}" FontSize="30" Foreground="Black"/>
+        </StackPanel>
+
+        <!-- Основной интерфейс -->
+        <TextBox HorizontalAlignment="Left" Margin="212,92,0,0" TextWrapping="Wrap" Text="Необходимо пройти капчу" VerticalAlignment="Top" Width="504" FontSize="30" FontFamily="{StaticResource MainFont}" Height="52" IsReadOnly="True" BorderThickness="0" Foreground="{StaticResource MainColor}"/>
+        <TextBox Name="ExampleTextTB" HorizontalAlignment="Left" Margin="234,172,0,0" TextWrapping="Wrap" Text="Введите проверочный текст:" VerticalAlignment="Top" Width="357" FontSize="25" FontFamily="{StaticResource MainFont}" Height="52" IsReadOnly="True" BorderThickness="0" Foreground="{StaticResource MainColor}"/>
+        <TextBox TextDecorations="Strikethrough" Name="CaptchaTB" HorizontalAlignment="Left" Margin="234,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="357" FontSize="25" FontFamily="{StaticResource MainFont}" Height="52" IsReadOnly="True" BorderThickness="0" Foreground="{StaticResource MainColor}"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="332" FontSize="30" FontFamily="{StaticResource MainFont}" Name="UserInput"/>
+        <Button Content="Подтвердить" HorizontalAlignment="Center" Margin="0,353,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="{StaticResource MainFont}" Background="{StaticResource AccentColor}" Foreground="White" Click="Button_Click"/>
+    </Grid>
+</Window>
